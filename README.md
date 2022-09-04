@@ -33,3 +33,10 @@ Make sure you've started libvirt and the default network before use:
 sudo systemctl start libvirtd
 sudo virsh net-start default
 ```
+
+You may need to configure nss for hostname resolution:
+
+- https://libvirt.org/nss.html
+
+Hostnames should be only alpha-numeric, probably. See `sudo virsh net-dhcp-leases
+default` for actual hostnames. `vm_host` may be rewritten to `vmhost`.
